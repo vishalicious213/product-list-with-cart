@@ -15,6 +15,7 @@ function manageCart(event) {
     
     if (itemInCart) {
         console.log(itemInCart.id, id)
+        renderItemButtons(id)
     } else {
         console.log(id, "not in cart")
         cart.push({id: id, count: 1})
@@ -39,6 +40,10 @@ function renderDesserts() {
     `).join("")
 
     dessertsSection.innerHTML = dessertsToRender
+}
+
+function renderItemButtons(id) {
+    console.log("renderItemButtons", id)
 }
 
 
