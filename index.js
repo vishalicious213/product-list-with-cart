@@ -10,18 +10,19 @@ dessertsSection.addEventListener("click", manageCart)
 // ⬇️ EVENT HANDLERS ⬇️
 
 function manageCart(event) {
-    let id = event.target.id
+    let id = Number(event.target.id)
     let itemInCart = cart.find(item => item.id === id)
     
     if (itemInCart) {
         console.log(itemInCart.id, id)
-        renderItemButtons(id)
     } else {
         console.log(id, "not in cart")
-        cart.push({id: id, count: 1})
+        cart.push({id: Number(id), count: 1})
+        renderItemButtons({id: Number(id), count: 1})
     }
 
     console.log(cart)
+    console.log(itemInCart)
 }
 
 // ⬇️ RENDER FUNCTIONS ⬇️
@@ -42,8 +43,19 @@ function renderDesserts() {
     dessertsSection.innerHTML = dessertsToRender
 }
 
-function renderItemButtons(id) {
-    console.log("renderItemButtons", id)
+function renderItemButtons(item) {
+    console.log(item)
+    const itemButtons = document.getElementById(item.id)
+    console.log(itemButtons)
+    console.log("renderItemButtons", item.id)
+
+    itemButtons.innerHTML = `
+        <div>
+            <p>+</p>
+            <p>${item.count}</p>
+            <p>-</p>
+        </div>
+    `
 }
 
 
