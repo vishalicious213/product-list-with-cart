@@ -4,7 +4,13 @@ const dessertsSection = document.getElementById("desserts")
 
 // ⬇️ EVENT LISTENERS ⬇️
 
+dessertsSection.addEventListener("click", manageCart)
+
 // ⬇️ EVENT HANDLERS ⬇️
+
+function manageCart(event) {
+    console.log(event.target.id)
+}
 
 // ⬇️ RENDER FUNCTIONS ⬇️
 
