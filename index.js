@@ -1,6 +1,7 @@
 import desserts from "/data.js"
 
 const dessertsSection = document.getElementById("desserts")
+let cart = []
 
 // ⬇️ EVENT LISTENERS ⬇️
 
@@ -9,7 +10,14 @@ dessertsSection.addEventListener("click", manageCart)
 // ⬇️ EVENT HANDLERS ⬇️
 
 function manageCart(event) {
-    console.log(event.target.id)
+    let id = event.target.id
+    
+    if (cart.includes(id)) {
+        console.log(id)
+    } else {
+        console.log("not in cart")
+        cart.push(id)
+    }
 }
 
 // ⬇️ RENDER FUNCTIONS ⬇️
