@@ -14,6 +14,7 @@ function renderDesserts() {
     const dessertsToRender = desserts.map(dessert => `
         <section class="dessert-item">
             <img src=${dessert.image.mobile}>
+            <button>Add to Cart</button>
             <p>${dessert.category}</p>
             <h3>${dessert.name}</h3>
             <p>${dessert.price}</p>
