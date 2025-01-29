@@ -12,7 +12,12 @@ function renderDesserts() {
     dessertsSection.innerHTML = ""
 
     const dessertsToRender = desserts.map(dessert => `
-        <h3>${dessert.name}<h3>
+        <section class="dessert-item">
+            <img src=${dessert.image.mobile}>
+            <p>${dessert.category}</p>
+            <h3>${dessert.name}</h3>
+            <p>${dessert.price}</p>
+        </section>
     `).join("")
 
     dessertsSection.innerHTML = dessertsToRender
