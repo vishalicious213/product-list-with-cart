@@ -11,13 +11,16 @@ dessertsSection.addEventListener("click", manageCart)
 
 function manageCart(event) {
     let id = event.target.id
+    let itemInCart = cart.find(item => item.id === id)
     
-    if (cart.includes(id)) {
-        console.log(id)
+    if (itemInCart) {
+        console.log(itemInCart.id, id)
     } else {
-        console.log("not in cart")
-        cart.push(id)
+        console.log(id, "not in cart")
+        cart.push({id: id, count: 1})
     }
+
+    console.log(cart)
 }
 
 // ⬇️ RENDER FUNCTIONS ⬇️
