@@ -19,6 +19,7 @@ function manageCart(event) {
         if (!itemInCart) {
             cart.push({id: id, count: 1})
             renderItemButtons({id: id, count: 1})
+            renderCartSummary()
         }
     }
 
@@ -46,6 +47,7 @@ function incrementCartItem(id) {
     }
 
     itemCount.innerText = itemInCart.count
+    renderCartSummary()
 }
 
 function decrementCartItem(id) {
@@ -65,6 +67,8 @@ function decrementCartItem(id) {
             cart.splice(itemInCartIndex, 1)
         }
     }
+
+    renderCartSummary()
 }
 
 // ⬇️ RENDER FUNCTIONS ⬇️
@@ -103,9 +107,17 @@ function renderItemButtons(item) {
 
 function renderCartSummary() {
     cartSummary.innerHTML = ""
+    
+    const cartContents = cart.map(item => `
+        <section>
+            <h3>${item.id}</h3>
+            <p>${item.count}</p>
+        </section>
+    `)
 
     cartSummary.innerHTML += `
         <h2>Your Cart</h2>
+        <section>${cartContents}</section>
     `
 }
 
