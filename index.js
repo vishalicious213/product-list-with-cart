@@ -32,6 +32,11 @@ function manageCart(event) {
     if (event.target.id.split("-")[0] === "add") {
         incrementCartItem(id)
     }
+
+    // handle - button
+    if (event.target.id.split("-")[0] === "sub") {
+        decrementCartItem(id)
+    }
 }
 
 // ⬇️ RENDER FUNCTIONS ⬇️
@@ -62,22 +67,32 @@ function renderItemButtons(item) {
         <div class="itemButtons">
             <p id="add-${item.id}">+</p>
             <p>${item.count}</p>
-            <p>-</p>
+            <p id="sub-${item.id}">-</p>
         </div>
     `
 }
 
 function incrementCartItem(id) {
     let itemInCart = cart.find(item => item.id === id)
-    itemInCart.count = itemInCart.count + 1
+
+    if (!itemInCart) {
+        cart.push({id: id, count: 1})
+    } else {
+        itemInCart.count = itemInCart.count + 1
+    }
+
     console.log(cart)
 }
 
 function decrementCartItem(id) {
-    let itemInCart = cart.find(item => item.id === id)
-    itemInCart.count = itemInCart.count - 1
-    if (itemInCart.count === 0) {
-        itemInCart.count = 0
+    let itemInCartIndex = cart.findIndex(item => item.id === id)
+
+    if (itemInCartIndex !== -1) {
+        cart[itemInCartIndex].count = cart[itemInCartIndex].count -1
+
+        if (cart[itemInCartIndex].count === 0) {
+            cart.splice(itemInCartIndex, 1)
+        }
     }
     console.log(cart)
 }
