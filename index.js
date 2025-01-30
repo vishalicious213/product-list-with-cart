@@ -1,7 +1,6 @@
 import desserts from "/data.js"
 
 const dessertsSection = document.getElementById("desserts")
-const dessertsIDs = desserts.map(dessert => dessert.id)
 let cart = []
 
 // ⬇️ EVENT LISTENERS ⬇️
@@ -14,16 +13,10 @@ function manageCart(event) {
     let id = Number(event.target.id.split("-")[1])
     let itemInCart = cart.find(item => item.id === id)
 
-    // console.log(id)
-    
     // handle Add to Cart button
     if (event.target.id.split("-")[0] === "btn") {
-        if (itemInCart) {
-            console.log(itemInCart.id, id)
-        } else {
-            console.log(id, "not in cart")
+        if (!itemInCart) {
             cart.push({id: id, count: 1})
-            console.log(cart)
             renderItemButtons({id: id, count: 1})
         }
     }
@@ -58,10 +51,7 @@ function renderDesserts() {
 }
 
 function renderItemButtons(item) {
-    console.log(item)
     const itemButtons = document.getElementById(`btn-${item.id}`)
-    console.log(itemButtons)
-    console.log("renderItemButtons", item.id)
 
     itemButtons.innerHTML = `
         <div class="itemButtons">
@@ -83,7 +73,6 @@ function incrementCartItem(id) {
     }
 
     itemCount.innerText = itemInCart.count
-    // console.log(cart)
 }
 
 function decrementCartItem(id) {
@@ -100,9 +89,6 @@ function decrementCartItem(id) {
             cart.splice(itemInCartIndex, 1)
         }
     }
-    // console.log(cart)
 }
 
-
-console.log(desserts)
 renderDesserts()
