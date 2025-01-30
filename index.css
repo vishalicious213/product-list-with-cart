@@ -27,3 +27,8 @@ body {
     width: 9rem;
     align-self: center;
 }
+
+.itemButtons {
+    display: flex;
+    justify-content: space-between;
+}

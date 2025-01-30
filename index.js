@@ -1,6 +1,7 @@
 import desserts from "/data.js"
 
 const dessertsSection = document.getElementById("desserts")
+const dessertsIDs = desserts.map(dessert => dessert.id)
 let cart = []
 
 // ⬇️ EVENT LISTENERS ⬇️
@@ -13,12 +14,14 @@ function manageCart(event) {
     let id = Number(event.target.id)
     let itemInCart = cart.find(item => item.id === id)
     
-    if (itemInCart) {
-        console.log(itemInCart.id, id)
-    } else {
-        console.log(id, "not in cart")
-        cart.push({id: Number(id), count: 1})
-        renderItemButtons({id: Number(id), count: 1})
+    if (dessertsIDs.includes(id)) {
+        if (itemInCart) {
+            console.log(itemInCart.id, id)
+        } else {
+            console.log(id, "not in cart")
+            cart.push({id: Number(id), count: 1})
+            renderItemButtons({id: Number(id), count: 1})
+        }
     }
 
     console.log(cart)
@@ -33,7 +36,7 @@ function renderDesserts() {
     const dessertsToRender = desserts.map(dessert => `
         <section class="dessert-item">
             <img src=${dessert.image.mobile}>
-            <button id=${dessert.id}>Add to Cart</button>
+            <button id="btn-${dessert.id}">Add to Cart</button>
             <p>${dessert.category}</p>
             <h3>${dessert.name}</h3>
             <p>${dessert.price}</p>
@@ -50,12 +53,16 @@ function renderItemButtons(item) {
     console.log("renderItemButtons", item.id)
 
     itemButtons.innerHTML = `
-        <div>
-            <p>+</p>
+        <div class="itemButtons">
+            <p onclick=${incrementCartItem(item.id)}>+</p>
             <p>${item.count}</p>
             <p>-</p>
         </div>
     `
+}
+
+function incrementCartItem(id) {
+    console.log("add", id)
 }
 
 
