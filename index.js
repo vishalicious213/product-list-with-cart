@@ -110,12 +110,18 @@ function renderCartSummary() {
 
     const cartCount = cart.reduce((total, item) => total + item.count, 0)
     
-    const cartContents = cart.map(item => `
-        <section>
-            <h3>${item.id}</h3>
-            <p>${item.count}</p>
-        </section>
-    `)
+    const cartContents = cart.map(item => {
+        const dessertItem = desserts.find(dessert => dessert.id === item.id)
+
+        return `
+            <section>
+                <h3>${dessertItem.name}</h3>
+                <p>${item.count}</p>
+                <p>${dessertItem.price}</p>
+                <p>${dessertItem.price * item.count}</p>
+            </section>
+        `
+    }).join("")
 
     cartSummary.innerHTML += `
         <h2>Your Cart (${cartCount})</h2>
