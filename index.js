@@ -107,6 +107,8 @@ function renderItemButtons(item) {
 
 function renderCartSummary() {
     cartSummary.innerHTML = ""
+
+    const cartCount = cart.reduce((total, item) => total + item.count, 0)
     
     const cartContents = cart.map(item => `
         <section>
@@ -116,7 +118,7 @@ function renderCartSummary() {
     `)
 
     cartSummary.innerHTML += `
-        <h2>Your Cart</h2>
+        <h2>Your Cart (${cartCount})</h2>
         <section>${cartContents}</section>
     `
 }
