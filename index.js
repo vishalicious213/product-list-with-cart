@@ -11,16 +11,18 @@ dessertsSection.addEventListener("click", manageCart)
 // ⬇️ EVENT HANDLERS ⬇️
 
 function manageCart(event) {
-    let id = Number(event.target.id)
+    let id = Number(event.target.id.split("-")[1])
     let itemInCart = cart.find(item => item.id === id)
+
+    console.log(id)
     
     if (dessertsIDs.includes(id)) {
         if (itemInCart) {
             console.log(itemInCart.id, id)
         } else {
             console.log(id, "not in cart")
-            cart.push({id: Number(id), count: 1})
-            renderItemButtons({id: Number(id), count: 1})
+            cart.push({id: id, count: 1})
+            renderItemButtons({id: id, count: 1})
         }
     }
 
