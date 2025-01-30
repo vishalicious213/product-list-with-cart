@@ -55,9 +55,9 @@ function renderItemButtons(item) {
 
     itemButtons.innerHTML = `
         <div class="itemButtons">
-            <p id="add-${item.id}" class="qty-btn">+</p>
-            <p id="count-${item.id}">${item.count}</p>
             <p id="sub-${item.id}" class="qty-btn">-</p>
+            <p id="count-${item.id}">${item.count}</p>
+            <p id="add-${item.id}" class="qty-btn">+</p>
         </div>
     `
 
@@ -87,7 +87,8 @@ function decrementCartItem(id) {
 
         if (cart[itemInCartIndex].count === 0) {
             const button = document.getElementById(`btn-${id}`)
-            button.innerHTML = "Add to Cart"
+            button.innerHTML = `<img src="/img/icon-add-to-cart.svg">Add to Cart`
+            button.classList.remove("redButton")
             cart.splice(itemInCartIndex, 1)
         }
     }
