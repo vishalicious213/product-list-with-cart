@@ -30,7 +30,7 @@ function manageCart(event) {
 
     // handle + button
     if (event.target.id.split("-")[0] === "add") {
-        console.log("add")
+        incrementCartItem(id)
     }
 }
 
