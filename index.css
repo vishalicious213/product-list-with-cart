@@ -29,6 +29,8 @@ body {
     width: 100%;
 }
 
+/* BUTTONS */
+
 .dessert-item button {
     position: relative;
     bottom: 1rem;
@@ -42,4 +44,18 @@ body {
 .itemButtons {
     display: flex;
     justify-content: space-between;
+}
+
+.redButton {
+    background: var(--red);
+    color: var(--rose100);
+}
+
+.qty-btn {
+    displaY: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--rose100);
+    border-radius: 50%;
+    width: 1.1rem;
 }

@@ -55,11 +55,13 @@ function renderItemButtons(item) {
 
     itemButtons.innerHTML = `
         <div class="itemButtons">
-            <p id="add-${item.id}">+</p>
+            <p id="add-${item.id}" class="qty-btn">+</p>
             <p id="count-${item.id}">${item.count}</p>
-            <p id="sub-${item.id}">-</p>
+            <p id="sub-${item.id}" class="qty-btn">-</p>
         </div>
     `
+
+    itemButtons.classList.add("redButton")
 }
 
 function incrementCartItem(id) {
