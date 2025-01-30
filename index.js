@@ -73,6 +73,15 @@ function incrementCartItem(id) {
     console.log(cart)
 }
 
+function decrementCartItem(id) {
+    let itemInCart = cart.find(item => item.id === id)
+    itemInCart.count = itemInCart.count - 1
+    if (itemInCart.count === 0) {
+        itemInCart.count = 0
+    }
+    console.log(cart)
+}
+
 
 console.log(desserts)
 renderDesserts()
