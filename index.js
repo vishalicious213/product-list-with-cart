@@ -39,7 +39,7 @@ function renderDesserts() {
 
     const dessertsToRender = desserts.map(dessert => `
         <section class="dessert-item">
-            <img src=${dessert.image.mobile}>
+            <img id="img-${dessert.id}" src=${dessert.image.mobile}>
             <button id="btn-${dessert.id}" class="whiteButton"><img src="/img/icon-add-to-cart.svg">Add to Cart</button>
             <p class="dessert-category">${dessert.category}</p>
             <h3>${dessert.name}</h3>
@@ -52,6 +52,7 @@ function renderDesserts() {
 
 function renderItemButtons(item) {
     const itemButtons = document.getElementById(`btn-${item.id}`)
+    const img = document.getElementById(`img-${item.id}`)
 
     itemButtons.innerHTML = `
         <div class="itemButtons">
@@ -62,6 +63,7 @@ function renderItemButtons(item) {
     `
 
     itemButtons.classList.add("redButton")
+    img.classList.add("red-border")
 }
 
 function incrementCartItem(id) {

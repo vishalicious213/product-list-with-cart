@@ -29,10 +29,12 @@ body {
 
 .dessert-item img {
     width: 100%;
+    border-radius: .5rem;
 }
 
 .dessert-category {
     color: var(--rose500);
+    font-size: .9rem;
 }
 
 .dessert-cost {
@@ -43,6 +45,10 @@ body {
 .dessert-item h3 {
     color: var(--rose900);
     font-weight: 600;
+}
+
+.red-border {
+    outline: 2px solid var(--red);
 }
 
 /* BUTTONS */
