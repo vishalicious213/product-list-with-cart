@@ -16,6 +16,7 @@ function manageCart(event) {
 
     // console.log(id)
     
+    // handle Add to Cart button
     if (event.target.id.split("-")[0] === "btn") {
         if (itemInCart) {
             console.log(itemInCart.id, id)
@@ -25,6 +26,11 @@ function manageCart(event) {
             console.log(cart)
             renderItemButtons({id: id, count: 1})
         }
+    }
+
+    // handle + button
+    if (event.target.id.split("-")[0] === "add") {
+        console.log("add")
     }
 }
 
@@ -54,7 +60,7 @@ function renderItemButtons(item) {
 
     itemButtons.innerHTML = `
         <div class="itemButtons">
-            <p onclick=${incrementCartItem(item.id)}>+</p>
+            <p id="add-${item.id}">+</p>
             <p>${item.count}</p>
             <p>-</p>
         </div>
@@ -62,7 +68,9 @@ function renderItemButtons(item) {
 }
 
 function incrementCartItem(id) {
-    console.log("add", id)
+    let itemInCart = cart.find(item => item.id === id)
+    itemInCart.count = itemInCart.count + 1
+    console.log(cart)
 }
 
 
