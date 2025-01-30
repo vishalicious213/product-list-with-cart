@@ -82,6 +82,7 @@ function incrementCartItem(id) {
 function decrementCartItem(id) {
     const itemInCartIndex = cart.findIndex(item => item.id === id)
     const itemCount = document.getElementById(`count-${id}`)
+    const img = document.getElementById(`img-${id}`)
 
     if (itemInCartIndex !== -1) {
         cart[itemInCartIndex].count = cart[itemInCartIndex].count -1
@@ -91,6 +92,7 @@ function decrementCartItem(id) {
             const button = document.getElementById(`btn-${id}`)
             button.innerHTML = `<img src="/img/icon-add-to-cart.svg">Add to Cart`
             button.classList.remove("redButton")
+            img.classList.remove("red-border")
             cart.splice(itemInCartIndex, 1)
         }
     }
