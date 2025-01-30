@@ -31,6 +31,20 @@ body {
     width: 100%;
 }
 
+.dessert-category {
+    color: var(--rose500);
+}
+
+.dessert-cost {
+    color: var(--red);
+    font-weight: 600;
+}
+
+.dessert-item h3 {
+    color: var(--rose900);
+    font-weight: 600;
+}
+
 /* BUTTONS */
 
 .dessert-item button {

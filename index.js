@@ -41,9 +41,9 @@ function renderDesserts() {
         <section class="dessert-item">
             <img src=${dessert.image.mobile}>
             <button id="btn-${dessert.id}" class="whiteButton"><img src="/img/icon-add-to-cart.svg">Add to Cart</button>
-            <p>${dessert.category}</p>
+            <p class="dessert-category">${dessert.category}</p>
             <h3>${dessert.name}</h3>
-            <p>${dessert.price}</p>
+            <p class="dessert-cost">$${dessert.price.toFixed(2)}</p>
         </section>
     `).join("")
 
