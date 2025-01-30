@@ -66,14 +66,15 @@ function renderItemButtons(item) {
     itemButtons.innerHTML = `
         <div class="itemButtons">
             <p id="add-${item.id}">+</p>
-            <p>${item.count}</p>
+            <p id="count-${item.id}">${item.count}</p>
             <p id="sub-${item.id}">-</p>
         </div>
     `
 }
 
 function incrementCartItem(id) {
-    let itemInCart = cart.find(item => item.id === id)
+    const itemInCart = cart.find(item => item.id === id)
+    const itemCount = document.getElementById(`count-${id}`)
 
     if (!itemInCart) {
         cart.push({id: id, count: 1})
@@ -81,20 +82,25 @@ function incrementCartItem(id) {
         itemInCart.count = itemInCart.count + 1
     }
 
-    console.log(cart)
+    itemCount.innerText = itemInCart.count
+    // console.log(cart)
 }
 
 function decrementCartItem(id) {
-    let itemInCartIndex = cart.findIndex(item => item.id === id)
+    const itemInCartIndex = cart.findIndex(item => item.id === id)
+    const itemCount = document.getElementById(`count-${id}`)
 
     if (itemInCartIndex !== -1) {
         cart[itemInCartIndex].count = cart[itemInCartIndex].count -1
+        itemCount.innerText = cart[itemInCartIndex].count
 
         if (cart[itemInCartIndex].count === 0) {
+            const button = document.getElementById(`btn-${id}`)
+            button.innerHTML = "Add to Cart"
             cart.splice(itemInCartIndex, 1)
         }
     }
-    console.log(cart)
+    // console.log(cart)
 }
 
 
