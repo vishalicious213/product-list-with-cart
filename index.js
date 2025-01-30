@@ -114,11 +114,18 @@ function renderCartSummary() {
         const dessertItem = desserts.find(dessert => dessert.id === item.id)
 
         return `
-            <section>
-                <h3>${dessertItem.name}</h3>
-                <p>${item.count}</p>
-                <p>${dessertItem.price}</p>
-                <p>${dessertItem.price * item.count}</p>
+            <section class="cart-summary-item">
+                <div>
+                    <h3>${dessertItem.name}</h3>
+                    <div class="cart-summary-item-details">
+                        <p class="cart-summary-item-count">${item.count}x</p>
+                        <p class="cart-summary-item-price">@ ${dessertItem.price.toFixed(2)}</p>
+                        <p class="cart-summary-item-total">$${(dessertItem.price * item.count).toFixed(2)}</p>
+                    </div>
+                </div>
+                <div class="cart-summary-item-delete">
+                    <img src="/img/icon-remove-item.svg">
+                </div>
             </section>
         `
     }).join("")
