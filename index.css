@@ -41,6 +41,12 @@ body {
     align-self: center;
 }
 
+.dessert-item button img {
+    width: 1.1rem;
+    margin-right: .5rem;
+    vertical-align: middle;
+}
+
 .itemButtons {
     display: flex;
     justify-content: space-between;
