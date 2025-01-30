@@ -40,7 +40,7 @@ function renderDesserts() {
     const dessertsToRender = desserts.map(dessert => `
         <section class="dessert-item">
             <img src=${dessert.image.mobile}>
-            <button id="btn-${dessert.id}"><img src="/img/icon-add-to-cart.svg">Add to Cart</button>
+            <button id="btn-${dessert.id}" class="whiteButton"><img src="/img/icon-add-to-cart.svg">Add to Cart</button>
             <p>${dessert.category}</p>
             <h3>${dessert.name}</h3>
             <p>${dessert.price}</p>

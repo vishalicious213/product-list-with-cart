@@ -17,6 +17,7 @@
 
 body {
     margin: 1rem;
+    background: var(--rose50);
 }
 
 .dessert-item {
@@ -35,11 +36,14 @@ body {
     position: relative;
     bottom: 1rem;
     padding: .5rem 1rem;
-    border: 1px solid var(--rose500);
     border-radius: 1.25rem;
-    border: none;
     width: 9rem;
     align-self: center;
+}
+
+.whiteButton {
+    border: 1px solid var(--rose500);
+    background: white;
 }
 
 .dessert-item button img {
@@ -56,6 +60,7 @@ body {
 .redButton {
     background: var(--red);
     color: var(--rose100);
+    border: 1px solid var(--red);
 }
 
 .qty-btn {
