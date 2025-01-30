@@ -14,20 +14,18 @@ function manageCart(event) {
     let id = Number(event.target.id.split("-")[1])
     let itemInCart = cart.find(item => item.id === id)
 
-    console.log(id)
+    // console.log(id)
     
-    if (dessertsIDs.includes(id)) {
+    if (event.target.id.split("-")[0] === "btn") {
         if (itemInCart) {
             console.log(itemInCart.id, id)
         } else {
             console.log(id, "not in cart")
             cart.push({id: id, count: 1})
+            console.log(cart)
             renderItemButtons({id: id, count: 1})
         }
     }
-
-    console.log(cart)
-    console.log(itemInCart)
 }
 
 // ⬇️ RENDER FUNCTIONS ⬇️
@@ -50,7 +48,7 @@ function renderDesserts() {
 
 function renderItemButtons(item) {
     console.log(item)
-    const itemButtons = document.getElementById(item.id)
+    const itemButtons = document.getElementById(`btn-${item.id}`)
     console.log(itemButtons)
     console.log("renderItemButtons", item.id)
 
