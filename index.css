@@ -18,6 +18,7 @@
 body {
     margin: 1rem;
     background: var(--rose50);
+    font-family: "Red Hat Text", serif;
 }
 
 .dessert-item {
