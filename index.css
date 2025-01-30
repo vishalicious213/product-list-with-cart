@@ -21,6 +21,8 @@ body {
     font-family: "Red Hat Text", serif;
 }
 
+/* DESSERT ITEMS */
+
 .dessert-item {
     display: flex;
     flex-direction: column;

@@ -1,6 +1,7 @@
 import desserts from "/data.js"
 
 const dessertsSection = document.getElementById("desserts")
+const cartSummary = document.getElementById("cart-summary")
 let cart = []
 
 // ⬇️ EVENT LISTENERS ⬇️
@@ -29,6 +30,40 @@ function manageCart(event) {
     // handle - button
     if (event.target.id.split("-")[0] === "sub") {
         decrementCartItem(id)
+    }
+}
+
+// ⬇️ HELPER FUNCTIONS ⬇️
+
+function incrementCartItem(id) {
+    const itemInCart = cart.find(item => item.id === id)
+    const itemCount = document.getElementById(`count-${id}`)
+
+    if (!itemInCart) {
+        cart.push({id: id, count: 1})
+    } else {
+        itemInCart.count = itemInCart.count + 1
+    }
+
+    itemCount.innerText = itemInCart.count
+}
+
+function decrementCartItem(id) {
+    const itemInCartIndex = cart.findIndex(item => item.id === id)
+    const itemCount = document.getElementById(`count-${id}`)
+    const img = document.getElementById(`img-${id}`)
+
+    if (itemInCartIndex !== -1) {
+        cart[itemInCartIndex].count = cart[itemInCartIndex].count -1
+        itemCount.innerText = cart[itemInCartIndex].count
+
+        if (cart[itemInCartIndex].count === 0) {
+            const button = document.getElementById(`btn-${id}`)
+            button.innerHTML = `<img src="/img/icon-add-to-cart.svg">Add to Cart`
+            button.classList.remove("redButton")
+            img.classList.remove("red-border")
+            cart.splice(itemInCartIndex, 1)
+        }
     }
 }
 
@@ -66,36 +101,13 @@ function renderItemButtons(item) {
     img.classList.add("red-border")
 }
 
-function incrementCartItem(id) {
-    const itemInCart = cart.find(item => item.id === id)
-    const itemCount = document.getElementById(`count-${id}`)
+function renderCartSummary() {
+    cartSummary.innerHTML = ""
 
-    if (!itemInCart) {
-        cart.push({id: id, count: 1})
-    } else {
-        itemInCart.count = itemInCart.count + 1
-    }
-
-    itemCount.innerText = itemInCart.count
-}
-
-function decrementCartItem(id) {
-    const itemInCartIndex = cart.findIndex(item => item.id === id)
-    const itemCount = document.getElementById(`count-${id}`)
-    const img = document.getElementById(`img-${id}`)
-
-    if (itemInCartIndex !== -1) {
-        cart[itemInCartIndex].count = cart[itemInCartIndex].count -1
-        itemCount.innerText = cart[itemInCartIndex].count
-
-        if (cart[itemInCartIndex].count === 0) {
-            const button = document.getElementById(`btn-${id}`)
-            button.innerHTML = `<img src="/img/icon-add-to-cart.svg">Add to Cart`
-            button.classList.remove("redButton")
-            img.classList.remove("red-border")
-            cart.splice(itemInCartIndex, 1)
-        }
-    }
+    cartSummary.innerHTML += `
+        <h2>Your Cart</h2>
+    `
 }
 
 renderDesserts()
+renderCartSummary()
