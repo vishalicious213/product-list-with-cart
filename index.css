@@ -36,17 +36,19 @@ body {
 
 .dessert-category {
     color: var(--rose500);
-    font-size: .9rem;
+    font-size: .75rem;
 }
 
 .dessert-cost {
     color: var(--red);
     font-weight: 600;
+    font-size: .8rem;
 }
 
 .dessert-item h3 {
     color: var(--rose900);
     font-weight: 600;
+    font-size: .8rem;
 }
 
 .red-border {
