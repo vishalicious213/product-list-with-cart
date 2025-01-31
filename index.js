@@ -134,19 +134,27 @@ function renderCartSummary() {
         `
     }).join("")
 
-    cartSummary.innerHTML += `
-        <h2>Your Cart (${cartCount})</h2>
-        <section>${cartContents}</section>
-        <div class="order-total">
-            <p class="order-total-label">Order Total</p>
-            <p class="order-total-price">$${orderTotal.toFixed(2)}</p>
-        </div>
-        <div class="carbon-neutral">
-            <img src="/img/icon-carbon-neutral.svg">
-            <p>This is a <span>carbon-neutral</span> delivery</p>
-        </div>
-        <button id="cart-summary-confirm-btn" class="cart-summary-confirm-btn">Confirm Order</button>
-    `
+    if (cart.length > 0) {
+        cartSummary.innerHTML += `
+            <h2>Your Cart (${cartCount})</h2>
+            <section>${cartContents}</section>
+            <div class="order-total">
+                <p class="order-total-label">Order Total</p>
+                <p class="order-total-price">$${orderTotal.toFixed(2)}</p>
+            </div>
+            <div class="carbon-neutral">
+                <img src="/img/icon-carbon-neutral.svg">
+                <p>This is a <span>carbon-neutral</span> delivery</p>
+            </div>
+            <button id="cart-summary-confirm-btn" class="cart-summary-confirm-btn">Confirm Order</button>
+        `
+    } else {
+        cartSummary.innerHTML = `
+            <h2>Your Cart (${cartCount})</h2>
+            <img class="empty-cart-img" src="/img/illustration-empty-cart.svg">
+            <p class="empty-cart-txt">Your added items will appear here</p>
+        `
+    }
 }
 
 renderDesserts()
