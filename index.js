@@ -82,7 +82,14 @@ function decrementCartItem(id) {
 
 function deleteCartItem(id) {
     const itemInCartIndex = cart.findIndex(item => item.id === Number(id))
+    const button = document.getElementById(`btn-${id}`)
+    const img = document.getElementById(`img-${id}`)
+    
     cart.splice(itemInCartIndex, 1)
+    button.innerHTML = `<img src="/img/icon-add-to-cart.svg">Add to Cart`
+    button.classList.add("whiteButton")
+    button.classList.remove("redButton")
+    img.classList.remove("red-border")
     renderCartSummary()
 }
 
