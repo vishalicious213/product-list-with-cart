@@ -21,6 +21,11 @@ body {
     font-family: "Red Hat Text", serif;
 }
 
+body > h2 {
+    font-size: 2rem;
+    color: var(--rose900);
+}
+
 /* DESSERT ITEMS */
 
 .dessert-item {
@@ -60,15 +65,18 @@ body {
 .dessert-item button {
     position: relative;
     bottom: 1rem;
-    padding: .5rem 1rem;
+    padding: .5rem 0;
     border-radius: 1.25rem;
-    width: 9rem;
+    width: 8rem;
     align-self: center;
 }
 
 .whiteButton {
-    border: 1px solid var(--rose500);
+    border: 1px solid var(--rose400);
     background: white;
+    color: var(--rose900);
+    font-size: .7rem;
+    font-weight: 600;
 }
 
 .dessert-item button img {
