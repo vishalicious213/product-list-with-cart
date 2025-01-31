@@ -7,6 +7,7 @@ let cart = []
 // ⬇️ EVENT LISTENERS ⬇️
 
 dessertsSection.addEventListener("click", manageCart)
+cartSummary.addEventListener("click", handleCartSummary)
 
 // ⬇️ EVENT HANDLERS ⬇️
 
@@ -31,6 +32,13 @@ function manageCart(event) {
     // handle - button
     if (event.target.id.split("-")[0] === "sub") {
         decrementCartItem(id)
+    }
+}
+
+function handleCartSummary(event) {
+    // handle delete in cart summary
+    if (event.target.id.split("-")[0] === "del") {
+        deleteCartItem(event.target.id.split("-")[1])
     }
 }
 
@@ -70,6 +78,10 @@ function decrementCartItem(id) {
     }
 
     renderCartSummary()
+}
+
+function deleteCartItem(id) {
+    console.log(id)
 }
 
 // ⬇️ RENDER FUNCTIONS ⬇️
@@ -128,7 +140,7 @@ function renderCartSummary() {
                     </div>
                 </div>
                 <div class="cart-summary-item-delete">
-                    <img src="/img/icon-remove-item.svg">
+                    <img id="del-${item.id}" src="/img/icon-remove-item.svg">
                 </div>
             </section>
         `
