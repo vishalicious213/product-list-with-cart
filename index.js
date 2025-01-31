@@ -81,7 +81,9 @@ function decrementCartItem(id) {
 }
 
 function deleteCartItem(id) {
-    console.log(id)
+    const itemInCartIndex = cart.findIndex(item => item.id === Number(id))
+    cart.splice(itemInCartIndex, 1)
+    renderCartSummary()
 }
 
 // ⬇️ RENDER FUNCTIONS ⬇️
