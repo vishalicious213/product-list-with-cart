@@ -143,6 +143,7 @@ function renderCartSummary() {
             <img src="/img/icon-carbon-neutral.svg">
             <p>This is a <span>carbon-neutral</span> delivery</p>
         </div>
+        <button id="cart-summary-confirm-btn" class="cart-summary-confirm-btn">Confirm Order</button>
     `
 }
 
