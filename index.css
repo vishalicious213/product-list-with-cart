@@ -26,6 +26,10 @@ body > h2 {
     color: var(--rose900);
 }
 
+button:hover {
+    cursor: pointer;
+}
+
 /* DESSERT ITEMS */
 
 .dessert-item {
@@ -62,7 +66,7 @@ body > h2 {
 
 /* BUTTONS */
 
-.dessert-item button {
+.dessert-item > button {
     position: relative;
     bottom: 1rem;
     padding: .5rem 0;
@@ -79,7 +83,7 @@ body > h2 {
     font-weight: 600;
 }
 
-.dessert-item button img {
+.whiteButton img {
     width: 1.1rem;
     margin-right: .5rem;
     vertical-align: middle;
@@ -88,6 +92,7 @@ body > h2 {
 .itemButtons {
     display: flex;
     justify-content: space-around;
+    align-items: center;
 }
 
 .redButton {
@@ -97,12 +102,15 @@ body > h2 {
 }
 
 .qty-btn {
-    displaY: flex;
+    background-color: var(--red);
+    color: var(--rose100);
+    display: flex;
     justify-content: center;
     align-items: center;
     border: 1px solid var(--rose100);
     border-radius: 50%;
-    width: 1.1rem;
+    width: 1rem;
+    height: 1rem;
 }
 
 /* CART SUMMARY */

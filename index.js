@@ -62,6 +62,7 @@ function decrementCartItem(id) {
         if (cart[itemInCartIndex].count === 0) {
             const button = document.getElementById(`btn-${id}`)
             button.innerHTML = `<img src="/img/icon-add-to-cart.svg">Add to Cart`
+            button.classList.add("whiteButton")
             button.classList.remove("redButton")
             img.classList.remove("red-border")
             cart.splice(itemInCartIndex, 1)
@@ -95,12 +96,13 @@ function renderItemButtons(item) {
 
     itemButtons.innerHTML = `
         <div class="itemButtons">
-            <p id="sub-${item.id}" class="qty-btn">-</p>
+            <button id="sub-${item.id}" class="qty-btn">-</button>
             <p id="count-${item.id}">${item.count}</p>
-            <p id="add-${item.id}" class="qty-btn">+</p>
+            <button id="add-${item.id}" class="qty-btn">+</button>
         </div>
     `
 
+    itemButtons.classList.remove("whiteButton")
     itemButtons.classList.add("redButton")
     img.classList.add("red-border")
 }
