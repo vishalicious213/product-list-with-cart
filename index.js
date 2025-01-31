@@ -109,9 +109,11 @@ function renderCartSummary() {
     cartSummary.innerHTML = ""
 
     const cartCount = cart.reduce((total, item) => total + item.count, 0)
+    let orderTotal = 0
     
     const cartContents = cart.map(item => {
         const dessertItem = desserts.find(dessert => dessert.id === item.id)
+        orderTotal += dessertItem.price * item.count
 
         return `
             <section class="cart-summary-item">
@@ -133,6 +135,14 @@ function renderCartSummary() {
     cartSummary.innerHTML += `
         <h2>Your Cart (${cartCount})</h2>
         <section>${cartContents}</section>
+        <div class="order-total">
+            <p class="order-total-label">Order Total</p>
+            <p class="order-total-price">$${orderTotal.toFixed(2)}</p>
+        </div>
+        <div class="carbon-neutral">
+            <img src="/img/icon-carbon-neutral.svg">
+            <p>This is a <span>carbon-neutral</span> delivery</p>
+        </div>
     `
 }
 

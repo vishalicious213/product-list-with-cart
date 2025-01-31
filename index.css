@@ -123,7 +123,6 @@ body {
 
 .cart-summary-item-details {
     display: flex;
-    /* justify-content: space-between; */
 }
 
 .cart-summary-item-count {
@@ -153,4 +152,41 @@ body {
     border-radius: 50%;
     width: 1rem;
     height: 1rem;
+}
+
+.order-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.order-total-label {
+    color: var(--rose600);
+    font-size: .75rem;
+}
+
+.order-total-price {
+    color: var(--rose600);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.carbon-neutral {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--rose50);
+    color: var(--rose600);
+    font-size: .7rem;
+    padding: .75rem .5rem;
+    border-radius: .5rem;
+}
+
+.carbon-neutral img {
+    margin-right: .33rem;
+}
+
+.carbon-neutral span {
+    font-weight: bold;
 }
