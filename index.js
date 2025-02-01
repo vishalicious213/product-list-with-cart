@@ -46,6 +46,7 @@ function handleCartSummary(event) {
     if (event.target.id === "cart-summary-confirm-btn") {
         console.log("confirm order")
         shoppingCart.classList.remove("hidden")
+        renderShoppingCart()
     }
 }
 
@@ -183,6 +184,16 @@ function renderCartSummary() {
             <p class="empty-cart-txt">Your added items will appear here</p>
         `
     }
+}
+
+function renderShoppingCart() {
+    shoppingCart.innerHTML = ""
+    
+    shoppingCart.innerHTML = `
+        <h2>Order Confirmed</h2>
+        <p>We hope you enjoy your food!</p>
+        <button id="new-order-btn" class="new-order-btn">Start New Order</button>
+    `
 }
 
 renderDesserts()
