@@ -233,10 +233,14 @@ button:hover {
 .cart-summary-confirm-btn {
     width: 100%;
     padding: .75rem;
-    background-color: var(--red);
+    background: var(--red);
     color: var(--rose100);
     border: none;
     border-radius: 1.5rem;
     margin: 1rem 0 0 0;
     font-family: "Red Hat Text", serif;
+}
+
+.cart-summary-confirm-btn:hover {
+    background: #952C0C;
 }
