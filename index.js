@@ -44,7 +44,9 @@ function handleCartSummary(event) {
 
     // handle click on confirm order button
     if (event.target.id === "cart-summary-confirm-btn") {
-        console.log("confirm order")
+        const body = document.querySelector("body")
+        body.classList.add("noscroll")
+        window.scroll(0, 0)
         shoppingCart.classList.remove("hidden")
         renderShoppingCart()
     }

@@ -34,6 +34,10 @@ button:hover {
     visibility: hidden;
 }
 
+.noscroll {
+    overflow: hidden;
+}
+
 /* DESSERT ITEMS */
 
 .dessert-item {
@@ -290,8 +294,6 @@ button:hover {
     font-size: .7rem;
 }
 
-/*  */
-
 .cart-contents {
     background: var(--rose50);
     border-top-left-radius: .5rem;
@@ -363,8 +365,6 @@ button:hover {
     font-weight: 700;
     color: var(--rose900);
 }
-
-/*  */
 
 .new-order-btn {
     width: 100%;
