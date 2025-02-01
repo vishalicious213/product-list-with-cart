@@ -2,7 +2,7 @@ import desserts from "/data.js"
 
 const dessertsSection = document.getElementById("desserts")
 const cartSummary = document.getElementById("cart-summary")
-const shoppingCart = document.getElementById("shopping-cart")
+const shoppingCart = document.getElementById("cart-container")
 let cart = []
 
 // ⬇️ EVENT LISTENERS ⬇️
@@ -190,10 +190,12 @@ function renderShoppingCart() {
     shoppingCart.innerHTML = ""
     
     shoppingCart.innerHTML = `
-        <h2>Order</h2>
-        <h2>Confirmed</h2>
-        <p>We hope you enjoy your food!</p>
-        <button id="new-order-btn" class="new-order-btn">Start New Order</button>
+        <section id="shopping-cart" class="shopping-cart">
+            <h2>Order</h2>
+            <h2>Confirmed</h2>
+            <p>We hope you enjoy your food!</p>
+            <button id="new-order-btn" class="new-order-btn">Start New Order</button>
+        </section>
     `
 }
 

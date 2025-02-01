@@ -31,7 +31,7 @@ button:hover {
 }
 
 .hidden {
-    visibility: hidden;
+    display: none;
 }
 
 /* DESSERT ITEMS */
@@ -261,10 +261,24 @@ button:hover {
 
 /* SHOPPING CART */
 
+.cart-container {
+    display: flex;
+    align-items: center;
+    background: rgba(0, 0, 0, .5);
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    padding: 1rem;
+}
+
 .shopping-cart {
     background: white;
     padding: 1.5rem;
     border-radius: 1rem;
+    width: 100%;
 }
 
 .shopping-cart h2 {
