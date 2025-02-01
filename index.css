@@ -292,6 +292,12 @@ button:hover {
 
 /*  */
 
+.cart-contents {
+    background: var(--rose50);
+    border-radius: .5rem;
+    margin-top: 1rem;
+}
+
 .shopping-cart-summary-item {
     display: flex;
     justify-content: space-between;
@@ -309,6 +315,7 @@ button:hover {
 .shopping-cart-summary-item img {
     border-radius: .5rem;
     width: 25%;
+    margin-right: .5rem;
 }
 
 .shopping-cart-summary-item-details {

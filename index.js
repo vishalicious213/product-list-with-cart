@@ -197,15 +197,15 @@ function renderShoppingCart() {
 
         return `
             <section class="shopping-cart-summary-item">
+                <img src=${dessertItem.image.thumbnail}>
                 <div>
-                    <img src=${dessertItem.image.thumbnail}>
                     <h3>${dessertItem.name}</h3>
                     <div class="shopping-cart-summary-item-details">
                         <p class="shopping-cart-summary-item-count">${item.count}x</p>
                         <p class="shopping-cart-summary-item-price">@ ${dessertItem.price.toFixed(2)}</p>
                     </div>
-                    <p class="shopping-cart-summary-item-total">$${(dessertItem.price * item.count).toFixed(2)}</p>
                 </div>
+                <p class="shopping-cart-summary-item-total">$${(dessertItem.price * item.count).toFixed(2)}</p>
             </section>
         `
     }).join("")
@@ -215,7 +215,7 @@ function renderShoppingCart() {
             <h2>Order</h2>
             <h2>Confirmed</h2>
             <p>We hope you enjoy your food!</p>
-            <section>${cartContents}</section>
+            <section class="cart-contents">${cartContents}</section>
             <button id="new-order-btn" class="new-order-btn">Start New Order</button>
         </section>
     `
