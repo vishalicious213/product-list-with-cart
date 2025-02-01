@@ -9,6 +9,7 @@ let cart = []
 
 dessertsSection.addEventListener("click", manageCart)
 cartSummary.addEventListener("click", handleCartSummary)
+shoppingCart.addEventListener("click", handleShoppingCart)
 
 // ⬇️ EVENT HANDLERS ⬇️
 
@@ -49,6 +50,13 @@ function handleCartSummary(event) {
         window.scroll(0, 0)
         shoppingCart.classList.remove("hidden")
         renderShoppingCart()
+    }
+}
+
+function handleShoppingCart(event) {
+    // handle click on start new order button (in modal)
+    if (event.target.id === "new-order-btn") {
+        console.log("new order btn")
     }
 }
 
