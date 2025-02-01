@@ -102,7 +102,7 @@ button:hover {
 }
 
 .qty-btn {
-    background-color: var(--red);
+    background: var(--red);
     color: var(--rose100);
     display: flex;
     justify-content: center;
@@ -111,6 +111,11 @@ button:hover {
     border-radius: 50%;
     width: 1rem;
     height: 1rem;
+}
+
+.qty-btn:hover {
+    background: var(--rose100);
+    color: var(--red);
 }
 
 /* CART SUMMARY */
