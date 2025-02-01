@@ -38,6 +38,11 @@ button:hover {
     overflow: hidden;
 }
 
+main {
+    margin: auto;
+    outline: 1px solid red;
+}
+
 /* DESSERT ITEMS */
 
 .dessert-item {
@@ -133,13 +138,13 @@ button:hover {
 
 /* CART SUMMARY */
 
-#cart-summary {
+.cart-summary {
     background: white;
     padding: 1.5rem;
     border-radius: 1rem;
 }
 
-#cart-summary h2 {
+.cart-summary h2 {
     color: var(--red);
     font-size: 1.25rem;
 }
@@ -379,4 +384,31 @@ button:hover {
 
 .new-order-btn:hover {
     background: #952C0C;
+}
+
+/* MEDIA QUERIES */
+
+@media screen and (min-width: 640px) {
+    main {
+        display: flex;
+        flex-wrap: wrap;
+        /* max-width: 90%; */
+    }
+
+    .desserts {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        max-width: 800px;
+    }
+
+    .dessert-item {
+        width: 48%;
+        /* max-width: 250px; */
+    }
+
+    .cart-summary {
+        width: 100%;
+        /* max-width: 400px; */
+    }
 }
