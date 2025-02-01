@@ -294,7 +294,8 @@ button:hover {
 
 .cart-contents {
     background: var(--rose50);
-    border-radius: .5rem;
+    border-top-left-radius: .5rem;
+    border-top-right-radius: .5rem;
     margin-top: 1rem;
     padding: .5rem 1rem;
 }
@@ -344,9 +345,24 @@ button:hover {
     width: 4rem;
 }
 
+.shopping-cart-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: var(--rose50);
+    border-bottom-left-radius: .5rem;
+    border-bottom-right-radius: .5rem;
+}
 
+.shopping-cart-total-label {
+    font-size: .7rem;
+}
 
-
+.shopping-cart-total-cost {
+    font-weight: 700;
+    color: var(--rose900);
+}
 
 /*  */
 

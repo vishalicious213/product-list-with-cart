@@ -216,6 +216,10 @@ function renderShoppingCart() {
             <h2>Confirmed</h2>
             <p>We hope you enjoy your food!</p>
             <section class="cart-contents">${cartContents}</section>
+            <div class="shopping-cart-total">
+                <p class="shopping-cart-total-label">Order Total</p>
+                <p id="shopping-cart-total-cost" class="shopping-cart-total-cost">$${orderTotal.toFixed(2)}</p>
+            </div>
             <button id="new-order-btn" class="new-order-btn">Start New Order</button>
         </section>
     `
