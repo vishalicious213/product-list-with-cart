@@ -293,6 +293,7 @@ main {
 
 .shopping-cart h2 {
     color: var(--rose900);
+    max-width: 10rem;
 }
 
 .shopping-cart > p {
@@ -409,6 +410,10 @@ main {
         width: 100%;
         max-width: 400px;
         margin: auto;
+    }
+
+    .shopping-cart h2 {
+        max-width: 15rem;
     }
 }
 

@@ -240,8 +240,8 @@ function renderShoppingCart() {
     
     shoppingCart.innerHTML = `
         <section id="shopping-cart" class="shopping-cart">
-            <h2>Order</h2>
-            <h2>Confirmed</h2>
+            <img class="order-confirmed" src="/img/icon-order-confirmed.svg">
+            <h2>Order Confirmed</h2>
             <p>We hope you enjoy your food!</p>
             <section class="cart-contents">${cartContents}</section>
             <div class="shopping-cart-total">
