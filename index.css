@@ -83,6 +83,11 @@ button:hover {
     font-weight: 600;
 }
 
+.whiteButton:hover {
+    color: var(--red);
+    border: 1px solid var(--red);
+}
+
 .whiteButton img {
     width: 1.1rem;
     margin-right: .5rem;
