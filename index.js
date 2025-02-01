@@ -56,11 +56,29 @@ function handleCartSummary(event) {
 function handleShoppingCart(event) {
     // handle click on start new order button (in modal)
     if (event.target.id === "new-order-btn") {
-        console.log("new order btn")
+        clearCartContents()
+        const body = document.querySelector("body")
+        body.classList.remove("noscroll")
+        shoppingCart.classList.add("hidden")
     }
 }
 
 // ⬇️ HELPER FUNCTIONS ⬇️
+
+function clearCartContents() {
+    cart = []
+    renderCartSummary()
+
+    document.querySelectorAll(".dessert-item > button").forEach(button => {
+        const id = button.id.split("-")[1]
+        const img = document.getElementById(`img-${id}`)
+
+        button.innerHTML = `<img src="/img/icon-add-to-cart.svg">Add to Cart`
+        button.classList.add("whiteButton")
+        button.classList.remove("redButton")
+        img.classList.remove('red-border')
+    })
+}
 
 function incrementCartItem(id) {
     const itemInCart = cart.find(item => item.id === id)
