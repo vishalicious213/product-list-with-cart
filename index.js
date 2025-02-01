@@ -190,7 +190,8 @@ function renderShoppingCart() {
     shoppingCart.innerHTML = ""
     
     shoppingCart.innerHTML = `
-        <h2>Order Confirmed</h2>
+        <h2>Order</h2>
+        <h2>Confirmed</h2>
         <p>We hope you enjoy your food!</p>
         <button id="new-order-btn" class="new-order-btn">Start New Order</button>
     `
