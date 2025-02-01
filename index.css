@@ -290,6 +290,56 @@ button:hover {
     font-size: .7rem;
 }
 
+/*  */
+
+.shopping-cart-summary-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--rose100);
+}
+
+.shopping-cart-summary-item h3 {
+    color: var(--rose900);
+    font-weight: 600;
+    font-size: .8rem;
+}
+
+.shopping-cart-summary-item img {
+    border-radius: .5rem;
+    width: 25%;
+}
+
+.shopping-cart-summary-item-details {
+    display: flex;
+    font-size: .8rem;
+}
+
+.shopping-cart-summary-item-count {
+    color: var(--red);
+    font-weight: 600;
+    width: 2rem;
+}
+
+.shopping-cart-summary-item-price {
+    color: var(--rose300);
+    font-weight: 600;
+    width: 4rem;
+}
+
+.shopping-cart-summary-item-total {
+    color: var(--rose400);
+    font-weight: 600;
+    width: 4rem;
+}
+
+
+
+
+
+/*  */
+
 .new-order-btn {
     width: 100%;
     padding: .75rem;

@@ -196,14 +196,15 @@ function renderShoppingCart() {
         orderTotal += dessertItem.price * item.count
 
         return `
-            <section class="cart-summary-item">
+            <section class="shopping-cart-summary-item">
                 <div>
+                    <img src=${dessertItem.image.thumbnail}>
                     <h3>${dessertItem.name}</h3>
-                    <div class="cart-summary-item-details">
-                        <p class="cart-summary-item-count">${item.count}x</p>
-                        <p class="cart-summary-item-price">@ ${dessertItem.price.toFixed(2)}</p>
-                        <p class="cart-summary-item-total">$${(dessertItem.price * item.count).toFixed(2)}</p>
+                    <div class="shopping-cart-summary-item-details">
+                        <p class="shopping-cart-summary-item-count">${item.count}x</p>
+                        <p class="shopping-cart-summary-item-price">@ ${dessertItem.price.toFixed(2)}</p>
                     </div>
+                    <p class="shopping-cart-summary-item-total">$${(dessertItem.price * item.count).toFixed(2)}</p>
                 </div>
             </section>
         `
