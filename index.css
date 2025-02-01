@@ -392,46 +392,61 @@ main {
     main {
         display: flex;
         flex-wrap: wrap;
-        /* max-width: 90%; */
     }
 
     .desserts {
         display: flex;
         flex-wrap: wrap;
         gap: 1rem;
-        /* max-width: 800px; */
     }
 
     .dessert-item {
         width: 48.5%;
-        /* max-width: 250px; */
     }
 
     .cart-summary {
         width: 100%;
-        /* max-width: 400px; */
+        max-width: 400px;
+        margin: auto;
     }
 }
 
 @media screen and (min-width: 900px) {
-    main {
-        /* max-width: 90%; */
-    }
-
     .desserts {
         display: flex;
         flex-wrap: wrap;
         gap: 1rem;
-        /* max-width: 800px; */
     }
 
     .dessert-item {
-        width: 32%;
-        /* max-width: 250px; */
+        width: 30%;
     }
 
     .cart-summary {
         width: 100%;
-        /* max-width: 400px; */
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .container {
+        max-width: 1200px;
+        margin: auto;
+    }
+
+    main {
+        display: flex;
+        flex-wrap: wrap;
+        position: relative;
+    }
+
+    .desserts {
+        width: 70%;
+        max-width: 900px;
+    }
+
+    .cart-summary {
+        width: 30%;
+        position: absolute;
+        right: 0;
     }
 }
