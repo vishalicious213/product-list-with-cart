@@ -296,6 +296,7 @@ button:hover {
     background: var(--rose50);
     border-radius: .5rem;
     margin-top: 1rem;
+    padding: .5rem 1rem;
 }
 
 .shopping-cart-summary-item {
@@ -314,7 +315,7 @@ button:hover {
 
 .shopping-cart-summary-item img {
     border-radius: .5rem;
-    width: 25%;
+    width: 20%;
     margin-right: .5rem;
 }
 
@@ -326,18 +327,20 @@ button:hover {
 .shopping-cart-summary-item-count {
     color: var(--red);
     font-weight: 600;
-    width: 2rem;
+    width: 1.5rem;
 }
 
 .shopping-cart-summary-item-price {
     color: var(--rose300);
     font-weight: 600;
-    width: 4rem;
+    width: 3.5rem;
 }
 
 .shopping-cart-summary-item-total {
-    color: var(--rose400);
+    color: var(--rose900);
+    font-size: .8rem;
     font-weight: 600;
+    text-align: right;
     width: 4rem;
 }
 
