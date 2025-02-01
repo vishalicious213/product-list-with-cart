@@ -30,6 +30,10 @@ button:hover {
     cursor: pointer;
 }
 
+.hidden {
+    visibility: hidden;
+}
+
 /* DESSERT ITEMS */
 
 .dessert-item {

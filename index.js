@@ -2,6 +2,7 @@ import desserts from "/data.js"
 
 const dessertsSection = document.getElementById("desserts")
 const cartSummary = document.getElementById("cart-summary")
+const shoppingCart = document.getElementById("shopping-cart")
 let cart = []
 
 // ⬇️ EVENT LISTENERS ⬇️
@@ -39,6 +40,11 @@ function handleCartSummary(event) {
     // handle delete in cart summary
     if (event.target.id.split("-")[0] === "del") {
         deleteCartItem(event.target.id.split("-")[1])
+    }
+
+    // handle click on confirm order button
+    if (event.target.id === "cart-summary-confirm-btn") {
+        console.log("confirm order")
     }
 }
 
