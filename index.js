@@ -205,7 +205,7 @@ function renderCartSummary() {
 
     if (cart.length > 0) {
         cartSummary.innerHTML += `
-            <h2>Your Cart (${cartCount})</h2>
+            <h1>Your Cart (${cartCount})</h1>
             <section>${cartContents}</section>
             <div class="order-total">
                 <p class="order-total-label">Order Total</p>
@@ -219,7 +219,7 @@ function renderCartSummary() {
         `
     } else {
         cartSummary.innerHTML = `
-            <h2>Your Cart (${cartCount})</h2>
+            <h1>Your Cart (${cartCount})</h1>
             <img class="empty-cart-img" alt="The cart is empty" src="/img/illustration-empty-cart.svg">
             <p class="empty-cart-txt">Your added items will appear here</p>
         `
@@ -253,7 +253,7 @@ function renderShoppingCart() {
     shoppingCart.innerHTML = `
         <section id="shopping-cart" class="shopping-cart">
             <img class="order-confirmed" alt="Green checkmark to indicate that the order has been confirmed" src="/img/icon-order-confirmed.svg">
-            <h2>Order Confirmed</h2>
+            <h1>Order Confirmed</h1>
             <p>We hope you enjoy your food!</p>
             <section class="cart-contents">${cartContents}</section>
             <div class="shopping-cart-total">

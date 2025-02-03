@@ -143,7 +143,7 @@ main {
     border-radius: 1rem;
 }
 
-.cart-summary h2 {
+.cart-summary h1 {
     color: var(--red);
     font-size: 1.25rem;
 }
@@ -291,7 +291,7 @@ main {
     margin: auto;
 }
 
-.shopping-cart h2 {
+.shopping-cart h1 {
     color: var(--rose900);
     max-width: 10rem;
 }
