@@ -153,7 +153,7 @@ function renderDesserts() {
     `).join("")
 
     dessertsSection.innerHTML = `
-        <h2>Desserts</h2>
+        <h1>Desserts</h1>
         ${dessertsToRender}
     `
 }

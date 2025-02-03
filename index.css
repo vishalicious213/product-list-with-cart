@@ -21,7 +21,7 @@ body {
     font-family: "Red Hat Text", serif;
 }
 
-body > h2 {
+body > h2, body > h1 {
     font-size: 2rem;
     color: var(--rose900);
 }
