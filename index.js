@@ -147,7 +147,7 @@ function renderDesserts() {
             <img id="img-${dessert.id}" alt="${dessert.name}" src=${dessert.image.mobile}>
             <button id="btn-${dessert.id}" class="whiteButton"><img src="/img/icon-add-to-cart.svg" alt="Add to Cart button">Add to Cart</button>
             <p class="dessert-category">${dessert.category}</p>
-            <h3>${dessert.name}</h3>
+            <h2>${dessert.name}</h2>
             <p class="dessert-cost">$${dessert.price.toFixed(2)}</p>
         </section>
     `).join("")
@@ -188,7 +188,7 @@ function renderCartSummary() {
         return `
             <section class="cart-summary-item">
                 <div>
-                    <h3>${dessertItem.name}</h3>
+                    <h2>${dessertItem.name}</h2>
                     <div class="cart-summary-item-details">
                         <p class="cart-summary-item-count">${item.count}x</p>
                         <p class="cart-summary-item-price">@ ${dessertItem.price.toFixed(2)}</p>
@@ -239,7 +239,7 @@ function renderShoppingCart() {
             <section class="shopping-cart-summary-item">
                 <img src=${dessertItem.image.thumbnail} alt="${dessertItem.name}">
                 <div>
-                    <h3>${dessertItem.name}</h3>
+                    <h2>${dessertItem.name}</h2>
                     <div class="shopping-cart-summary-item-details">
                         <p class="shopping-cart-summary-item-count">${item.count}x</p>
                         <p class="shopping-cart-summary-item-price">@ ${dessertItem.price.toFixed(2)}</p>

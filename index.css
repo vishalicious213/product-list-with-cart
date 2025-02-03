@@ -66,7 +66,7 @@ main {
     font-size: .8rem;
 }
 
-.dessert-item h3 {
+.dessert-item h2 {
     color: var(--rose900);
     font-weight: 600;
     font-size: .8rem;
@@ -156,7 +156,7 @@ main {
     border-bottom: 1px solid var(--rose100);
 }
 
-.cart-summary-item h3 {
+.cart-summary-item h2 {
     color: var(--rose900);
     font-weight: 600;
     font-size: .8rem;
@@ -317,7 +317,7 @@ main {
     border-bottom: 1px solid var(--rose100);
 }
 
-.shopping-cart-summary-item h3 {
+.shopping-cart-summary-item h2 {
     color: var(--rose900);
     font-weight: 600;
     font-size: .8rem;
