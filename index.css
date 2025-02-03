@@ -377,10 +377,12 @@ main {
 
 .pay-buttons {
     margin: 1rem 0 0 0;
+    text-align: center;
 }
 
 .new-order-btn {
     width: 100%;
+    max-width: 296px;
     padding: .75rem;
     background: var(--red);
     color: var(--rose100);
