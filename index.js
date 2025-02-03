@@ -54,12 +54,21 @@ function handleCartSummary(event) {
 }
 
 function handleShoppingCart(event) {
+    // console.log(event)
     // handle click on start new order button (in modal)
     if (event.target.id === "new-order-btn") {
         clearCartContents()
         const body = document.querySelector("body")
         body.classList.remove("noscroll")
         shoppingCart.classList.add("hidden")
+    }
+
+    if (event.target.id === "stripe-btn") {
+        console.log("stripe-btn")
+    }
+
+    if (event.target.id === "paypal-btn") {
+        console.log("paypal-btn")
     }
 }
 
@@ -250,11 +259,11 @@ function renderShoppingCart() {
             </div>
 
             <section class="pay-buttons">
-                <button id="stripe-btn" class="pay-btn">
-                    <img class="pay-btn-img" src="/img/pay.png">
+                <button class="pay-btn">
+                    <img id="stripe-btn" class="pay-btn-img" src="/img/pay.png">
                 </button>
-                <button id="paypal-btn" class="pay-btn">
-                    <img class="pay-btn-img" src="/img/paypal.png">
+                <button class="pay-btn">
+                    <img id="paypal-btn" class="pay-btn-img" src="/img/paypal.png">
                 </button>
                 <button id="new-order-btn" class="new-order-btn">Start New Order</button>
             </section>
