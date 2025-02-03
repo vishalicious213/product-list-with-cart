@@ -152,7 +152,10 @@ function renderDesserts() {
         </section>
     `).join("")
 
-    dessertsSection.innerHTML = dessertsToRender
+    dessertsSection.innerHTML = `
+        <h2>Desserts</h2>
+        ${dessertsToRender}
+    `
 }
 
 function renderItemButtons(item) {
