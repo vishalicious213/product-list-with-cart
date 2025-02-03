@@ -405,6 +405,10 @@ main {
     border-radius: 1.5rem;
 }
 
+.pay-btn-img:hover {
+    filter: brightness(.9);
+}
+
 /* MEDIA QUERIES */
 
 @media screen and (min-width: 600px) {

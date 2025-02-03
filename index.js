@@ -54,7 +54,6 @@ function handleCartSummary(event) {
 }
 
 function handleShoppingCart(event) {
-    // console.log(event)
     // handle click on start new order button (in modal)
     if (event.target.id === "new-order-btn") {
         clearCartContents()
@@ -197,6 +196,7 @@ function renderCartSummary() {
                     <img id="del-${item.id}" src="/img/icon-remove-item.svg">
                 </div>
             </section>
+            
         `
     }).join("")
 
