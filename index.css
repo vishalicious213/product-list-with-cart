@@ -373,6 +373,12 @@ main {
     color: var(--rose900);
 }
 
+/* SHOPPING CART BUTTONS */
+
+.pay-buttons {
+    margin: 1rem 0 0 0;
+}
+
 .new-order-btn {
     width: 100%;
     padding: .75rem;
@@ -380,12 +386,21 @@ main {
     color: var(--rose100);
     border: none;
     border-radius: 1.5rem;
-    margin: 1rem 0 0 0;
     font-family: "Red Hat Text", serif;
 }
 
 .new-order-btn:hover {
     background: #952C0C;
+}
+
+.pay-btn {
+    border: none;
+    background: white;
+}
+
+.pay-btn-img {
+    width: 100%;
+    border-radius: 1.5rem;
 }
 
 /* MEDIA QUERIES */
