@@ -248,6 +248,8 @@ function renderShoppingCart() {
                 <p class="shopping-cart-total-label">Order Total</p>
                 <p id="shopping-cart-total-cost" class="shopping-cart-total-cost">$${orderTotal.toFixed(2)}</p>
             </div>
+            <button id="stripe-btn" class="new-order-btn">Pay Now</button>
+            <button id="paypal-btn" class="new-order-btn">PayPal</button>
             <button id="new-order-btn" class="new-order-btn">Start New Order</button>
         </section>
     `
