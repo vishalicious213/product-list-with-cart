@@ -81,7 +81,7 @@ function clearCartContents() {
         const id = button.id.split("-")[1]
         const img = document.getElementById(`img-${id}`)
 
-        button.innerHTML = `<img src="/img/icon-add-to-cart.svg">Add to Cart`
+        button.innerHTML = `<img src="/img/icon-add-to-cart.svg" alt="Add to Cart button">Add to Cart`
         button.classList.add("whiteButton")
         button.classList.remove("redButton")
         img.classList.remove('red-border')
@@ -113,7 +113,7 @@ function decrementCartItem(id) {
 
         if (cart[itemInCartIndex].count === 0) {
             const button = document.getElementById(`btn-${id}`)
-            button.innerHTML = `<img src="/img/icon-add-to-cart.svg">Add to Cart`
+            button.innerHTML = `<img src="/img/icon-add-to-cart.svg" alt="Add to Cart button">Add to Cart`
             button.classList.add("whiteButton")
             button.classList.remove("redButton")
             img.classList.remove("red-border")
@@ -130,7 +130,7 @@ function deleteCartItem(id) {
     const img = document.getElementById(`img-${id}`)
     
     cart.splice(itemInCartIndex, 1)
-    button.innerHTML = `<img src="/img/icon-add-to-cart.svg">Add to Cart`
+    button.innerHTML = `<img src="/img/icon-add-to-cart.svg" alt="Add to Cart button">Add to Cart`
     button.classList.add("whiteButton")
     button.classList.remove("redButton")
     img.classList.remove("red-border")
@@ -144,8 +144,8 @@ function renderDesserts() {
 
     const dessertsToRender = desserts.map(dessert => `
         <section class="dessert-item">
-            <img id="img-${dessert.id}" src=${dessert.image.mobile}>
-            <button id="btn-${dessert.id}" class="whiteButton"><img src="/img/icon-add-to-cart.svg">Add to Cart</button>
+            <img id="img-${dessert.id}" alt=${dessert.name} src=${dessert.image.mobile}>
+            <button id="btn-${dessert.id}" class="whiteButton"><img src="/img/icon-add-to-cart.svg" alt="Add to Cart button">Add to Cart</button>
             <p class="dessert-category">${dessert.category}</p>
             <h3>${dessert.name}</h3>
             <p class="dessert-cost">$${dessert.price.toFixed(2)}</p>
@@ -193,7 +193,7 @@ function renderCartSummary() {
                     </div>
                 </div>
                 <div class="cart-summary-item-delete">
-                    <img id="del-${item.id}" src="/img/icon-remove-item.svg">
+                    <img id="del-${item.id} alt="Remove from Cart button"" src="/img/icon-remove-item.svg">
                 </div>
             </section>
             
@@ -209,7 +209,7 @@ function renderCartSummary() {
                 <p class="order-total-price">$${orderTotal.toFixed(2)}</p>
             </div>
             <div class="carbon-neutral">
-                <img src="/img/icon-carbon-neutral.svg">
+                <img src="/img/icon-carbon-neutral.svg" alt="Carbon-neutral image">
                 <p>This is a <span>carbon-neutral</span> delivery</p>
             </div>
             <button id="cart-summary-confirm-btn" class="cart-summary-confirm-btn">Confirm Order</button>
@@ -217,7 +217,7 @@ function renderCartSummary() {
     } else {
         cartSummary.innerHTML = `
             <h2>Your Cart (${cartCount})</h2>
-            <img class="empty-cart-img" src="/img/illustration-empty-cart.svg">
+            <img class="empty-cart-img" alt="The cart is empty" src="/img/illustration-empty-cart.svg">
             <p class="empty-cart-txt">Your added items will appear here</p>
         `
     }
@@ -234,7 +234,7 @@ function renderShoppingCart() {
 
         return `
             <section class="shopping-cart-summary-item">
-                <img src=${dessertItem.image.thumbnail}>
+                <img src=${dessertItem.image.thumbnail} alt=${dessertItem.name}>
                 <div>
                     <h3>${dessertItem.name}</h3>
                     <div class="shopping-cart-summary-item-details">
@@ -249,7 +249,7 @@ function renderShoppingCart() {
     
     shoppingCart.innerHTML = `
         <section id="shopping-cart" class="shopping-cart">
-            <img class="order-confirmed" src="/img/icon-order-confirmed.svg">
+            <img class="order-confirmed" alt="Green checkmark to indicate that the order has been confirmed" src="/img/icon-order-confirmed.svg">
             <h2>Order Confirmed</h2>
             <p>We hope you enjoy your food!</p>
             <section class="cart-contents">${cartContents}</section>
@@ -260,10 +260,10 @@ function renderShoppingCart() {
 
             <section class="pay-buttons">
                 <button class="pay-btn">
-                    <img id="stripe-btn" class="pay-btn-img" src="/img/pay.png">
+                    <img id="stripe-btn" class="pay-btn-img" src="/img/pay.png" alt="Credit card payment button">
                 </button>
                 <button class="pay-btn">
-                    <img id="paypal-btn" class="pay-btn-img" src="/img/paypal.png">
+                    <img id="paypal-btn" class="pay-btn-img" src="/img/paypal.png" alt="PayPal payment button">
                 </button>
                 <button id="new-order-btn" class="new-order-btn">Start New Order</button>
             </section>
