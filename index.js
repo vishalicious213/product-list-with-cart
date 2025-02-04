@@ -154,7 +154,7 @@ function renderDesserts() {
 
     dessertsSection.innerHTML = `
         <h1>Desserts</h1>
-        ${dessertsToRender}
+        <section class="dessert-items">${dessertsToRender}</section>
     `
 }
 

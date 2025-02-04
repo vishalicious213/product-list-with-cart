@@ -44,6 +44,15 @@ main {
 
 /* DESSERT ITEMS */
 
+.desserts {
+    width: 100%;
+}
+
+.dessert-items {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .dessert-item {
     display: flex;
     flex-direction: column;
@@ -417,9 +426,7 @@ main {
         flex-wrap: wrap;
     }
 
-    .desserts {
-        display: flex;
-        flex-wrap: wrap;
+    .dessert-items {
         gap: 1rem;
     }
 
@@ -439,12 +446,6 @@ main {
 }
 
 @media screen and (min-width: 900px) {
-    .desserts {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1rem;
-    }
-
     .dessert-item {
         width: 30%;
     }
@@ -466,7 +467,7 @@ main {
         position: relative;
     }
 
-    .desserts {
+    .dessert-items {
         width: 70%;
         max-width: 900px;
     }
