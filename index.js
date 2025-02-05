@@ -144,7 +144,11 @@ function renderDesserts() {
 
     const dessertsToRender = desserts.map(dessert => `
         <section class="dessert-item">
-            <img id="img-${dessert.id}" alt="${dessert.name}" src=${dessert.image.mobile}>
+            <picture>
+                <source media="(min-width: 600px)" srcset=${dessert.image.tablet}>
+                <source media="(min-width: 900px)" srcset=${dessert.image.desktop}>
+                <img id="img-${dessert.id}" alt="${dessert.name}" src=${dessert.image.mobile}>
+            </picture>
             <button id="btn-${dessert.id}" class="whiteButton"><img src="/img/icon-add-to-cart.svg" alt="Add to Cart button">Add to Cart</button>
             <p class="dessert-category">${dessert.category}</p>
             <h2>${dessert.name}</h2>
