@@ -160,6 +160,19 @@ async function getCredentials() {
     }
 }
 
+async function getServerConfig() {
+    try {
+        const response = await fetch("/.netlify/functions/server")
+        const data = await response.json()
+        console.log("port:", data.port)
+        console.log("environment:", data.environment)
+        console.log("client_id:", data.client_id)
+        console.log("client_secret:", data.client_secret)
+    } catch (error) {
+        console.log("Error fetching server data", error)
+    }
+}
+
 // ⬇️ RENDER FUNCTIONS ⬇️
 
 function renderDesserts() {
@@ -304,4 +317,5 @@ function renderShoppingCart() {
 renderDesserts()
 renderCartSummary()
 fetchHello()
-getCredentials()
+// getCredentials()
+getServerConfig()
