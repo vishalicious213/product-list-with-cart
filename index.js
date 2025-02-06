@@ -137,6 +137,19 @@ function deleteCartItem(id) {
     renderCartSummary()
 }
 
+// ⬇️ BACKEND FUNCTIONS ⬇️
+
+async function fetchHello() {
+    try {
+        const response = await fetch("/.netlify/functions/hello")
+        const data = await response.json()
+        console.log(data.message)
+    } catch (error) {
+        console.log("Error fetching data", error)
+    }
+}
+
+
 // ⬇️ RENDER FUNCTIONS ⬇️
 
 function renderDesserts() {
@@ -280,3 +293,4 @@ function renderShoppingCart() {
 
 renderDesserts()
 renderCartSummary()
+fetchHello()
