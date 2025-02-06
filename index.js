@@ -149,6 +149,16 @@ async function fetchHello() {
     }
 }
 
+async function getCredentials() {
+    try {
+        const response = await fetch("/.netlify/functions/credentials")
+        const data = await response.json()
+        console.log("client_id:", data.client_id)
+        console.log("client_secret:", data.client_secret)
+    } catch (error) {
+        console.log("Error fetching credentials data", error)
+    }
+}
 
 // ⬇️ RENDER FUNCTIONS ⬇️
 
@@ -294,3 +304,4 @@ function renderShoppingCart() {
 renderDesserts()
 renderCartSummary()
 fetchHello()
+getCredentials()
