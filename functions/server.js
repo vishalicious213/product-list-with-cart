@@ -5,7 +5,6 @@ exports.handler = async () => {
     const client_secret = process.env.CLIENT_SECRET
     const endpoint_url = environment === "sandbox" ? "https://api-m.sandbox.paypal.com" : "https://api-m.paypal.com"
 
-    console.log(client_id)
     return {
         statusCode: 200,
         body: JSON.stringify({
